@@ -1,7 +1,7 @@
 {
-  "name": "boilermaker",
+  "name": "personalwebsite",
   "version": "1.0.0",
-  "description": "Some boilerplate code to get you started - get shakin'!",
+  "description": "Personal website!",
   "engines": {
     "node": ">= 7.0.0"
   },
