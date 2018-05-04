@@ -16,10 +16,16 @@ export const deleteEducation = () => ({ type: DELETE_EDUCATION });
 //THUNKS
 
 //REDUCER
-export default function (education = {}, action) {
+export default function (education = [], action) {
   switch (action.type) {
     case GET_EDUCATION:
       return action.education;
+    case UPDATE_EDUCATION:
+      return education.map(edu => (edu.id === action.education.id ? action.education.id : edu.id));
+    case DELETE_EDUCATION:
+      return education.filter(edu => edu.id !== action.education.id);
+    case CREATE_EDUCATION:
+      return [...education, action.education];
     default: return education;
   }
 }
