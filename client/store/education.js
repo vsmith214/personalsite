@@ -14,6 +14,11 @@ export const createEduction = education => ({ type: CREATE_EDUCATION, education 
 export const deleteEducation = () => ({ type: DELETE_EDUCATION });
 
 //THUNKS
+export const loadEducation = () => dispatch =>
+  axios.get('/api/education')
+    .then(res => dispatch(getEducation(res.data)))
+    .catch(err => console.error('Could not retrieve education', err));
+
 
 //REDUCER
 export default function (education = [], action) {
